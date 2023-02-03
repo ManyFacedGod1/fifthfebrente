@@ -87,8 +87,8 @@ const Cart = ({ history }) => {
                     item.totalPaisa * item.quantity
                   }`}</p>
 
-                  <p className="bablesh">{item.setFrom}</p>
-                  <p className="bablesh2">{item.setTo}</p>
+                  <p className="bablesh">{item.from}</p>
+                  <p className="bablesh2">{item.to}</p>
                 </div>
               ))}
 

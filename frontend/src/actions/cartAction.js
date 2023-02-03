@@ -8,7 +8,7 @@ import axios from 'axios';
 
 // Add to Cart
 export const addItemsToCart =
-  (id, quantity, totalPaisa, setFrom, setTo) => async (dispatch, getState) => {
+  (id, quantity, totalPaisa, from, to) => async (dispatch, getState) => {
     const { data } = await axios.get(`/api/v1/product/${id}`);
     // const { totalFinalAmount } = totalAmount;
 
@@ -20,8 +20,8 @@ export const addItemsToCart =
 
         image: data.product.images[0].url,
         stock: data.product.Stock,
-        setFrom,
-        setTo,
+        from,
+        to,
         quantity,
         totalPaisa,
       },

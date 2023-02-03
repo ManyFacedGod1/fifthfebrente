@@ -132,11 +132,11 @@ const ProcessOrder = ({ history, match }) => {
                 {/* changes made here to add dates  */}
                 <div className="thedateshere">
                   <Typography>Set From :</Typography>
-                  <span>{order.setFrom}</span>
+                  <span>{order.from}</span>
                   {/* {item.setFrom} */}
                   <Typography>Set To :</Typography>
                   {/* {item.setTo} */}
-                  <span>{order.setTo}</span>
+                  <span>{order.to}</span>
                 </div>
                 <div className="confirmCartItems">
                   <Typography>Your Cart Items:</Typography>
@@ -154,8 +154,8 @@ const ProcessOrder = ({ history, match }) => {
                           </span>
                           <div>
                             <span>
-                              {item.setFrom}
-                              {item.setTo}
+                              {item.to}
+                              {item.from}
                             </span>
                           </div>
                         </div>

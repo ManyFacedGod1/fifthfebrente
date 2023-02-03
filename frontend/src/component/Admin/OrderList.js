@@ -72,14 +72,14 @@ const OrderList = ({ history }) => {
     },
     //newly added below two
     {
-      field: 'setFrom',
+      field: 'from',
       headerName: 'Date From',
       type: 'date',
       minWidth: 150,
       flex: 0.4,
     },
     {
-      field: 'setTo',
+      field: 'to',
       headerName: 'Date To',
       type: 'date',
       minWidth: 150,
@@ -129,8 +129,8 @@ const OrderList = ({ history }) => {
         id: item._id,
         itemsQty: item.orderItems.length,
         amount: item.totalPrice,
-        setFrom: item.setFrom,
-        setTo: item.setTo,
+        from: item.from,
+        to: item.to,
         status: item.orderStatus,
       });
     });

@@ -46,11 +46,11 @@ const orderSchema = new mongoose.Schema({
       //   required: true,
       // },
       //recently added new order things
-      setFrom: {
+      from: {
         type: String,
         required: true,
       },
-      setTo: {
+      to: {
         type: String,
         required: true,
       },

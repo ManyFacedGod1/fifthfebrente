@@ -73,8 +73,8 @@ const MyOrders = () => {
         id: item._id,
         status: item.orderStatus,
         amount: item.totalPrice,
-        setFrom: item.setFrom,
-        setTo: item.setTo,
+        from: item.from,
+        to: item.to,
       });
     });
 

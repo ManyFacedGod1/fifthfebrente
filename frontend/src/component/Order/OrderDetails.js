@@ -78,11 +78,11 @@ const OrderDetails = ({ match }) => {
                 </div>
                 <div>
                   <p>Set From:</p>
-                  <span>{order.setFrom && order.setFrom}</span>
+                  <span>{order.from}</span>
                 </div>
                 <div>
                   <p>Set To:</p>
-                  <span>{order.setTo && order.setTo}</span>
+                  <span>{order.to}</span>
                 </div>
               </div>
 

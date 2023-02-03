@@ -129,9 +129,7 @@ const ProductDetails = ({ match }) => {
     setTotalDays(values[1].diff(values[0], 'days'));
   }
   const addToCartHandler = () => {
-    dispatch(
-      addItemsToCart(match.params.id, quantity, totalPaisa, setFrom, setTo)
-    );
+    dispatch(addItemsToCart(match.params.id, quantity, totalPaisa, from, to));
     alert.success('Item Added To Cart');
   };
 
