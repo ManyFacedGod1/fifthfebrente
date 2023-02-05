@@ -11,7 +11,7 @@ import {
   useStripe,
   useElements,
 } from '@stripe/react-stripe-js';
-
+import { clearCart } from '../../actions/cartAction';
 import axios from 'axios';
 import './payment.css';
 import CreditCardIcon from '@material-ui/icons/CreditCard';
@@ -31,6 +31,10 @@ const Payment = ({ history }) => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.newOrder);
+  //temporary code, trial to removeitem
+  // useEffect(() => {
+  //   localStorage.removeItem('cartItems');
+  // }, []);
 
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100),
@@ -98,6 +102,7 @@ const Payment = ({ history }) => {
           };
 
           dispatch(createOrder(order));
+          dispatch(clearCart());
           //trying the cart clear code
           // setCart([]);
           history.push('/success');
@@ -118,6 +123,7 @@ const Payment = ({ history }) => {
     }
   }, [dispatch, error, alert]);
 
+  // localStorage.setItem('cartItems', JSON.stringify([]));
   return (
     <Fragment>
       <MetaData title="Payment" />

@@ -46,14 +46,7 @@ const orderSchema = new mongoose.Schema({
       //   required: true,
       // },
       //recently added new order things
-      from: {
-        type: String,
-        required: true,
-      },
-      to: {
-        type: String,
-        required: true,
-      },
+
       //ends here
       quantity: {
         type: Number,
@@ -109,6 +102,17 @@ const orderSchema = new mongoose.Schema({
     required: true,
     default: 0,
   },
+  from: {
+    type: String,
+    required: true,
+    default: 'NoDate',
+  },
+  to: {
+    type: String,
+    required: true,
+    default: 'NoDate',
+  },
+
   orderStatus: {
     type: String,
     required: true,

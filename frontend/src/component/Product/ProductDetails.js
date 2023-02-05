@@ -27,9 +27,10 @@ import { NEW_REVIEW_RESET } from '../../constants/productConstants';
 
 const { RangePicker } = DatePicker;
 
-const ProductDetails = ({ match }) => {
+const ProductDetails = ({ match, history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
+  const { cartItems } = useSelector((state) => state.cart);
 
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
@@ -45,7 +46,10 @@ const ProductDetails = ({ match }) => {
     readOnly: true,
     precision: 0.5,
   };
-
+  const checkoutHandler = () => {
+    dispatch(addItemsToCart(match.params.id, quantity, totalPaisa, from, to));
+    history.push('/login?redirect=shipping');
+  };
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
@@ -177,7 +181,7 @@ const ProductDetails = ({ match }) => {
                   </div>
                   <button
                     disabled={product.Stock < 1 ? true : false}
-                    onClick={addToCartHandler}
+                    onClick={checkoutHandler}
                   >
                     {/* should I change this to direct buy instead */}
                     Add to Cart
